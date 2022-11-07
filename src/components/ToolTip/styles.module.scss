@@ -1,0 +1,50 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+.trigger {
+  background-color: transparent;
+  border: 0;
+  font-size: 0;
+}
+
+.content {
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  color: rgb(32, 32, 32);
+  background-color: rgb(224, 224, 224);
+  box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
+  user-select: none;
+
+  &[data-state='delayed-open'],
+  &[data-state='instant-open'] {
+    animation: fadeIn 300ms ease-out;
+  }
+
+  &[data-state='closed'] {
+    animation: fadeOut 300ms ease-in;
+  }
+
+  .arrow {
+    fill: rgb(224, 224, 224);
+  }
+}

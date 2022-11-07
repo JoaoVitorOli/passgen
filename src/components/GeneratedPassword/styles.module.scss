@@ -1,0 +1,37 @@
+.generatedPassword {
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  background-color: rgb(41, 41, 41);
+  display: flex;
+  padding: 20px;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+
+  p {
+    font-size: 1.75rem;
+    font-weight: 600;
+  }
+
+  .buttonCopy {
+    background-color: transparent;
+    font-size: 0;
+    padding: 5px;
+    border: 0;
+    border-radius: 6px;
+    transition: all .2s;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: rgba(20, 20, 20, 0.58);
+      transition: all .2s;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px var(--blueBoxShadow);
+    }
+  }
+}

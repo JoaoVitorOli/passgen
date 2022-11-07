@@ -1,0 +1,21 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+:root {
+  --font: 'Source Code Pro', monospace;
+  --blue: rgb(0, 105, 255);
+  --blueBoxShadow: rgba(0, 106, 255, 0.582);
+ }
+
+body {
+  background-color: rgb(19, 19, 19);
+  color: rgb(238, 238, 238);
+}
+
+button {
+  cursor: pointer;
+}
