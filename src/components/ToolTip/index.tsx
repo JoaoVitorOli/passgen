@@ -1,5 +1,5 @@
 import * as Tooltip from '@radix-ui/react-tooltip';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 
 import styles from './styles.module.scss';
 
@@ -9,11 +9,19 @@ interface TooltipProps {
 }
 
 export function ToolTip({ children, content }: TooltipProps) {
+  const [renderContent, setRenderContent] = useState(false);
+
+  useEffect(() => {
+    setRenderContent(true);
+  }, []);
+
   return (
     <Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger className={styles.trigger}>
-          {children}
+          {renderContent && (
+            children
+          )}
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content className={styles.content}>

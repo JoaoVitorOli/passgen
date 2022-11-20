@@ -1,0 +1,77 @@
+.characterLength {
+  width: 100%;
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+
+    h2 {
+      font-size: 1.125rem;
+    }
+    
+    span {
+      font-size: 1.75rem;
+      color: var(--blue);
+    }
+  }
+}
+
+.SliderRoot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  user-select: none;
+  touch-action: none;
+  width: 100%;
+}
+
+.SliderRoot[data-orientation='horizontal'] {
+  height: 20px;
+}
+
+.SliderRoot[data-orientation='vertical'] {
+  flex-direction: column;
+  width: 20px;
+  height: 100px;
+}
+
+.SliderTrack {
+  background-color: rgb(19, 19, 19);
+  position: relative;
+  flex-grow: 1;
+  border-radius: 9999px;
+}
+
+.SliderTrack[data-orientation='horizontal'] {
+  height: 3px;
+}
+
+.SliderTrack[data-orientation='vertical'] {
+  width: 3px;
+}
+
+.SliderRange {
+  position: absolute;
+  background-color: white;
+  border-radius: 9999px;
+  height: 100%;
+}
+
+.SliderThumb {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  box-shadow: 0 2px 10px var(--blueBoxShadow);
+  border-radius: 10px;
+  cursor: grab;
+}
+
+.SliderThumb:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px var(--blueBoxShadow);
+}
+

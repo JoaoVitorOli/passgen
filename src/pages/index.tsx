@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { GeneratedPassword } from '../components/GeneratedPassword';
+import { PasswordConfig } from '../components/PasswordConfig';
 
 import styles from '../styles/home.module.scss';
 
@@ -16,6 +17,7 @@ export default function Home() {
         <h1 className={styles.homeTitle}>Password Generator</h1>
 
         <GeneratedPassword />
+        <PasswordConfig />
       </main>
     </div>
   )
