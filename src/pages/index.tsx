@@ -8,7 +8,7 @@ import styles from '../styles/home.module.scss';
 export default function Home() {
   useEffect(() => {
     async function doFetch() {
-      const response = await fetch('http://34.75.33.161/wp-json/api/devs', {
+      const response = await fetch('https://dev-essential.pecege.com/wp-json/api/devs', {
         method: 'get'
       });
 
