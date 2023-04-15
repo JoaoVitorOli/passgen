@@ -4,16 +4,38 @@ import { Container } from "../Container";
 import { ToolTip } from '../ToolTip';
 
 import styles from './styles.module.scss';
+import { useRef, useState } from 'react';
+import { CustomToast } from '../CustomToast';
 
 export function GeneratedPassword() {
+  const [isToastOpen, setIsToastOpen] = useState(false);
+  const passwordRef = useRef<HTMLParagraphElement>(null);
+
+  function handleCopyPassword() {
+    navigator.clipboard.writeText(passwordRef.current?.innerText || '');
+
+    setIsToastOpen(true);
+  }
+
   return (
     <section className={styles.generatedPassword}>
       <Container>
         <div className={styles.content}>
-          <p>24389fc93ffe4</p>
+          <p ref={passwordRef}>24389fc93ffe4</p>
+
+          <CustomToast 
+            open={isToastOpen} 
+            title='Copied to clipboard!' 
+            setOpen={setIsToastOpen}
+          />
 
           <ToolTip content={'Copy password'}>
-            <button type='button' className={styles.buttonCopy}>
+            <button 
+              type='button' 
+              aria-label='Copy to clipboard' 
+              className={styles.buttonCopy}
+              onClick={handleCopyPassword}
+            >
               <ClipboardCopyIcon 
                 width={28} 
                 height={28} 
