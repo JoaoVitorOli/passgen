@@ -17,8 +17,11 @@ export function ToolTip({ children, content }: TooltipProps) {
 
   return (
     <Tooltip.Provider>
-      <Tooltip.Root>
-        <Tooltip.Trigger className={styles.trigger}>
+      <Tooltip.Root delayDuration={200}>
+        <Tooltip.Trigger 
+          tabIndex={-1} 
+          className={styles.trigger}
+        >
           {renderContent && (
             children
           )}
