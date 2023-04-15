@@ -1,0 +1,28 @@
+.button {
+  padding: 12px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  background-color: transparent;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  border-radius: 2px solid;
+  outline: 0;
+  border-radius: 6px;
+  transition: all 0.2s;
+
+  &[data-is-generated='true'] {
+    border: 2px solid var(--green);
+    color: var(--green);
+  }
+
+  &:hover {
+    transition: all 0.2s;
+    transition: all 0.2s;
+    background-color: rgba(20, 20, 20, 0.58);
+  }
+
+  &:focus-visible {
+    transition: all 0.2s;
+    box-shadow: 0 0 0 3px var(--blueBoxShadow);
+  }
+}

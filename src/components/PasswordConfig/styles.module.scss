@@ -6,6 +6,8 @@
 .content {
   background-color: var(--gray);
   display: flex;
+  gap: 24px;
+  flex-direction: column;
   border-radius: 8px;
   padding: 20px;
 }
