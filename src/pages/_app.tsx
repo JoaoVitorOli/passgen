@@ -1,3 +1,5 @@
+import * as Toast from '@radix-ui/react-toast';
+
 import { Source_Code_Pro } from '@next/font/google';
 
 import type { AppProps } from 'next/app'
@@ -11,7 +13,9 @@ const sourceCodePro = Source_Code_Pro({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={sourceCodePro.className}>
-      <Component {...pageProps} />
+      <Toast.Provider swipeDirection="right" >
+        <Component {...pageProps} />
+      </Toast.Provider>
     </main>
   )
 }
