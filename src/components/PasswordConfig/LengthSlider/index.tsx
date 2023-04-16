@@ -1,10 +1,22 @@
+import { useEffect, useState } from 'react';
 import * as Slider from '@radix-ui/react-slider';
-import { useState } from 'react';
+
+import { useStoreActions, useStoreState } from '../../../stores/hooks';
 
 import styles from './styles.module.scss';
 
-export function LengthSlider() {
+export default function LengthSlider() {
+  const updateConfig = useStoreActions(action => action.updateCharLength);
+  const passConfig = useStoreState(state => state.charLength);
   const [sliderValue, setSliderValue] = useState([15]);
+
+  useEffect(() => {
+    setSliderValue([passConfig]);
+  }, []);
+
+  useEffect(() => {
+    updateConfig(sliderValue[0]);
+  }, [sliderValue]);
 
   return (
     <div className={styles.characterLength}>
@@ -14,7 +26,7 @@ export function LengthSlider() {
         </h2>
 
         <span>
-          {sliderValue}
+          {sliderValue[0]}
         </span>
       </div>
 

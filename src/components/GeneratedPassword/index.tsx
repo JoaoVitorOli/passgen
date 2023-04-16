@@ -21,7 +21,7 @@ export function GeneratedPassword() {
     <section className={styles.generatedPassword}>
       <Container>
         <div className={styles.content}>
-          <p ref={passwordRef}>24389fc93ffe4</p>
+          <p className={styles.password} ref={passwordRef}>24389fc93ffe42224389fc93ffe422</p>
 
           <CustomToast 
             open={isToastOpen} 

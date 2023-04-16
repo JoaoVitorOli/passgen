@@ -5,15 +5,20 @@ import styles from './styles.module.scss';
 
 interface CheckBoxProps {
   id: string;
+  checked: Checkbox.CheckedState;
+  onCheckedChange: (checked: Checkbox.CheckedState) => void
 }
 
 export function CheckBox({
-  id
+  id,
+  checked,
+  onCheckedChange
 }: CheckBoxProps) {
   return (
     <Checkbox.Root 
       className={styles.checkboxRoot} 
-      defaultChecked 
+      checked={checked}
+      onCheckedChange={onCheckedChange}
       id={id}
     >
       <Checkbox.Indicator className={styles.checkboxIndicator}>

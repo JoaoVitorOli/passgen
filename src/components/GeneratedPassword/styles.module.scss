@@ -10,10 +10,15 @@
   align-items: center;
   justify-content: space-between;
   border-radius: 8px;
+  gap: 4px;
 
-  p {
-    font-size: 1.75rem;
+  .password {
+    font-size: 1.5rem;
     font-weight: 600;
+    width: 400px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .buttonCopy {
@@ -33,6 +38,12 @@
 
     &:focus {
       box-shadow: 0 0 0 3px var(--blueBoxShadow);
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    .password {
+      font-size: 1.2rem;
     }
   }
 }
