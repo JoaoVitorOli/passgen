@@ -1,7 +1,11 @@
-import { createStore, persist } from "easy-peasy";
-import { PasswordConfigStoreProps } from "./model";
+import { createContextStore } from "easy-peasy";
 import { passwordConfig } from "./passwordConfig";
+import { password } from "./password";
 
-export const passwordConfigStore = createStore<PasswordConfigStoreProps>(
-  passwordConfig
+export const PasswordConfigStores = createContextStore(
+  passwordConfig,
+);
+
+export const PasswordStores = createContextStore(
+  password,
 );

@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
+import { usePassActions } from '../../../stores/hooks/password';
+import { usePassConfigStoreState } from '../../../stores/hooks/passwordConfig';
 
 export function ButtonGenerate() {
+  const generateNewPass = usePassActions(action => action.generateNewPass);
+  const passConfig = usePassConfigStoreState(state => state);
   const [isGenerated, setIsGenerated] = useState(false);
 
   useEffect(() => {
@@ -16,8 +20,23 @@ export function ButtonGenerate() {
 
   function handleGenerate() {
     setIsGenerated(true);
-  }
 
+    const { 
+      charLength,
+      lowercase,
+      numbers,
+      symbols,
+      upercase
+    } = passConfig;
+
+    generateNewPass({
+      charLength,
+      lowercase,
+      numbers,
+      symbols,
+      upercase
+    });
+  }
 
   return (
     <button

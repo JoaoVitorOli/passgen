@@ -1,18 +1,17 @@
 import { CheckBox } from './CheckBox';
 
 import styles from './styles.module.scss';
-import { useStoreActions, useStoreState } from '../../../stores/hooks';
-import { PasswordConfigProps } from '../../../stores/model';
+import { usePassConfigActions, usePassConfigStoreState } from '../../../stores/hooks/passwordConfig';
 
 export default function CheckBoxes() {
-  const updateLowercase = useStoreActions(actions => actions.updateLowercase);
-  const updateUpercase = useStoreActions(actions => actions.updateUpercase);
-  const updateNumbers = useStoreActions(actions => actions.updateNumbers);
-  const updateSymbols = useStoreActions(actions => actions.updateSymbols);
-  const upercase = useStoreState(state => state.upercase);
-  const lowercase = useStoreState(state => state.lowercase);
-  const numbers = useStoreState(state => state.numbers);
-  const symbols = useStoreState(state => state.symbols);
+  const updateLowercase = usePassConfigActions(actions => actions.updateLowercase);
+  const updateUpercase = usePassConfigActions(actions => actions.updateUpercase);
+  const updateNumbers = usePassConfigActions(actions => actions.updateNumbers);
+  const updateSymbols = usePassConfigActions(actions => actions.updateSymbols);
+  const upercase = usePassConfigStoreState(state => state.upercase);
+  const lowercase = usePassConfigStoreState(state => state.lowercase);
+  const numbers = usePassConfigStoreState(state => state.numbers);
+  const symbols = usePassConfigStoreState(state => state.symbols);
 
   return (
     <div className={styles.container}>

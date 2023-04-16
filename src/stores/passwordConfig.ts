@@ -1,12 +1,12 @@
 import { action } from "easy-peasy";
 
-import { PasswordConfigStoreProps } from './model';
+import { PasswordConfigStoreProps } from './models/passwordConfig';
 
 export const passwordConfig: PasswordConfigStoreProps = {
   charLength: 15,
   lowercase: true,
   numbers: true,
-  symbols: true,
+  symbols: false,
   upercase: true,
 
   updateCharLength: action((state, payload) => {

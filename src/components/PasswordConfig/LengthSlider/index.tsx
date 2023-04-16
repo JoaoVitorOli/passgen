@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import * as Slider from '@radix-ui/react-slider';
 
-import { useStoreActions, useStoreState } from '../../../stores/hooks';
+import { usePassConfigActions, usePassConfigStoreState } from '../../../stores/hooks/passwordConfig';
 
 import styles from './styles.module.scss';
+import { PasswordConfigStores } from '../../../stores';
 
 export default function LengthSlider() {
-  const updateConfig = useStoreActions(action => action.updateCharLength);
-  const passConfig = useStoreState(state => state.charLength);
+  const updateConfig = usePassConfigActions(action => action.updateCharLength);
+  const passConfig = usePassConfigStoreState(state => state.charLength);
   const [sliderValue, setSliderValue] = useState([15]);
 
   useEffect(() => {
