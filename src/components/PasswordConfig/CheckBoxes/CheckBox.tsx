@@ -7,12 +7,14 @@ interface CheckBoxProps {
   id: string;
   checked: Checkbox.CheckedState;
   onCheckedChange: (checked: Checkbox.CheckedState) => void
+  ariaLabel: string;
 }
 
 export function CheckBox({
   id,
   checked,
-  onCheckedChange
+  onCheckedChange,
+  ariaLabel
 }: CheckBoxProps) {
   return (
     <Checkbox.Root 
@@ -20,6 +22,7 @@ export function CheckBox({
       checked={checked}
       onCheckedChange={onCheckedChange}
       id={id}
+      aria-label={ariaLabel}
     >
       <Checkbox.Indicator className={styles.checkboxIndicator}>
         <CheckIcon width={20} height={20} />

@@ -43,7 +43,7 @@ export default function LengthSlider() {
         <Slider.Track className={styles.SliderTrack}>
           <Slider.Range className={styles.SliderRange} />
         </Slider.Track>
-        <Slider.Thumb className={styles.SliderThumb} />
+        <Slider.Thumb aria-label='thumb' className={styles.SliderThumb} />
       </Slider.Root>
     </div>
   )

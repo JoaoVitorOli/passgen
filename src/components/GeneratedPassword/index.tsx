@@ -62,7 +62,7 @@ export function GeneratedPassword() {
               <ClipboardCopyIcon 
                 width={28} 
                 height={28} 
-                color={'rgb(0, 105, 255)'}
+                color={'#1F7CFF'}
               />
             </button>
           </ToolTip>
